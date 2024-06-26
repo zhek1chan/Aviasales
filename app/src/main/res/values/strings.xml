@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Aviasales</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="main_page_name">Поиск дешевых авиабилетов</string>
+    <string name="where_example">Куда - Турция</string>
+    <string name="from_example">Откуда - Москва</string>
+    <string name="main_musicaly_fly_over">Музыкально отлететь</string>
+    <string name="hard_directions">Сложный маршрут</string>
+    <string name="go_everywhere">Куда угодно</string>
+    <string name="hot_tickets">Горячие билеты</string>
+    <string name="weekends">Выходные</string>
+    <string name="popular_route">Популярное направление</string>
+    <string name="sochi">Сочи</string>
+    <string name="istambul">Стамбул</string>
+    <string name="phuket">Пхукет</string>
+    <string name="back">обратно</string>
+    <string name="date">22 ноя, сб</string>
+    <string name="person_and_type">1, эконом</string>
+    <string name="filters">фильтры</string>
+    <string name="direct_departure">Прямые рельсы</string>
+    <string name="show_all_tickets">Посмотреть все билеты</string>
+    <string name="show_all">Показать все</string>
+    <string name="minsk">Минск</string>
+</resources>

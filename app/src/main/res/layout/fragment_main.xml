@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <TextView
+        android:id="@+id/text_dashboard"
+        android:layout_width="172dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:text="@string/main_page_name"
+        android:fontFamily="@font/sfprodisplaysemibold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/some_id"
+        android:layout_width="329dp"
+        android:layout_height="122dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/some_id"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/text_frame"
+        android:layout_width="296dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/main_text_frame"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/some_id"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/some_id">
+
+        <EditText
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="49dp"
+            android:textColor="@color/white"
+            android:hint="@string/from_example"
+            android:textColorHint="@color/white"
+            android:textSize="16sp"
+            android:imeOptions="actionDone|flagNoExtractUi"
+            android:inputType="textNoSuggestions"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:maxLines="1"
+            android:autofillHints=""
+            android:background="@null"
+            app:layout_constraintStart_toStartOf="@id/text_frame"
+            app:layout_constraintTop_toTopOf="@id/text_frame"
+            >
+        </EditText>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_search"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@id/text_frame"
+            app:layout_constraintTop_toTopOf="@id/text_frame"
+            android:importantForAccessibility="no"
+            app:tint="@color/black">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/vector_75"
+            android:layout_width="232dp"
+            android:layout_height="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="48dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/vector_75"
+            app:layout_constraintStart_toStartOf="@id/text_frame"
+            app:layout_constraintTop_toTopOf="@id/text_frame"
+            android:importantForAccessibility="no">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="53dp"
+            android:layout_marginStart="49dp"
+            android:textSize="16sp"
+            android:hint="@string/where_example"
+            android:textColorHint="@color/main_text_where_to_go"
+            android:imeOptions="actionDone|flagNoExtractUi"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:autofillHints=""
+            android:background="@null"
+            android:fontFamily="@font/sfprodisplayregular"
+            android:textColor="@color/main_text_where_to_go"
+            app:layout_constraintStart_toStartOf="@id/text_frame"
+            app:layout_constraintTop_toTopOf="@id/text_frame">
+        </EditText>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:text="@string/main_musicaly_fly_over"
+        android:textColor="@color/white"
+        android:layout_marginTop="305dp"
+        android:layout_marginStart="15dp"
+        android:textSize="22sp"
+        android:fontFamily="@font/sfprodisplaysemibold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="542dp"
+        android:layout_height="213.16dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.recyclerview.widget.RecyclerView>
+    <!--
+    <ImageView
+        android:id="@+id/button_big_"
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="176dp"
+        android:clipToOutline="true"
+        android:background="@drawable/button_big"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView> -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
