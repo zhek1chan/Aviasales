@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <View
+        android:id="@+id/some_id"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/basic_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/button_back"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/left_arrow"
+        android:backgroundTint="@color/search_blue"
+        app:layout_constraintBottom_toBottomOf="@id/some_id"
+        app:layout_constraintStart_toStartOf="@id/some_id"
+        app:layout_constraintTop_toTopOf="@id/some_id" />
+
+    <TextView
+        android:id="@+id/from_to"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="@string/minsk"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/some_id"
+        app:layout_constraintTop_toTopOf="@id/some_id" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="31dp"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="@string/minsk"
+        android:textColor="@color/main_text_where_to_go"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@id/some_id"
+        app:layout_constraintTop_toTopOf="@id/some_id" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/buttons_holder"
+        android:layout_width="203dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="647dp"
+        android:background="@drawable/button_for_departures_screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/diagram"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/diagram"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="99dp"
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder"
+        app:layout_constraintStart_toStartOf="@id/buttons_holder"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder"/>
+
+    <ImageView
+        android:id="@+id/filter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/filter"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder"
+        app:layout_constraintStart_toStartOf="@id/buttons_holder"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder"/>
+
+    <TextView
+        android:id="@+id/filter_text"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="@string/filter"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/filter"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder"
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder"/>
+
+    <TextView
+        android:id="@+id/diagram_text"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="@string/diagram"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/diagram"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder"
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

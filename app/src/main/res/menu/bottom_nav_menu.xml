@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_aviatickets"
+        android:icon="@drawable/aviatickets"
+        android:title="@string/aviatickets"/>
 
     <item
-        android:id="@+id/navigation_dashboard"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:id="@+id/navigation_hotels"
+        android:icon="@drawable/hotel"
+        android:title="@string/hotels" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_less_long"
+        android:icon="@drawable/location"
+        android:title="@string/less_long" />
+
+    <item
+        android:id="@+id/navigation_subscribes"
+        android:icon="@drawable/bell"
+        android:title="@string/subscribes" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/person"
+        android:title="@string/profile" />
 
 </menu>

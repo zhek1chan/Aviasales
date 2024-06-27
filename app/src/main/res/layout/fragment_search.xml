@@ -14,7 +14,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="47dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/some_id"
+        android:background="@drawable/button_big"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -80,18 +80,14 @@
 
     <ImageView
         android:id="@+id/vector_75"
-        android:layout_width="272dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="56dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/vector_75"
-        android:importantForAccessibility="no"
-        app:layout_constraintEnd_toEndOf="@id/some_id"
-        app:layout_constraintStart_toStartOf="@id/some_id"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/vector_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/some_id" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -244,14 +240,104 @@
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toTopOf="@id/departure" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+    <RelativeLayout
+        android:id="@+id/first"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/some_id"
         android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/gray_dark"
         app:layout_constraintStart_toStartOf="@id/departure"
-        app:layout_constraintTop_toTopOf="@id/departure"
-        tools:itemCount="3" />
+        app:layout_constraintTop_toTopOf="@id/departure"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/red_ball"
+        android:backgroundTint="@color/search_light_red"
+        app:layout_constraintStart_toStartOf="@id/first"
+        app:layout_constraintTop_toTopOf="@id/first"/>
+
+    <TextView
+        android:id="@+id/first_title"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/white"
+        android:text="@string/sochi"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/first"
+        app:layout_constraintTop_toTopOf="@id/first"/>
+
+    <RelativeLayout
+        android:id="@+id/second"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/some_id"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/gray_dark"
+        app:layout_constraintStart_toStartOf="@id/departure"
+        app:layout_constraintTop_toBottomOf="@id/first"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/red_ball"
+        android:backgroundTint="@color/search_blue"
+        app:layout_constraintStart_toStartOf="@id/second"
+        app:layout_constraintTop_toTopOf="@id/second"/>
+
+    <TextView
+        android:id="@+id/second_title"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/white"
+        android:text="@string/sochi"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/second"
+        app:layout_constraintTop_toTopOf="@id/second"/>
+
+    <RelativeLayout
+        android:id="@+id/third"
+        android:layout_width="296dp"
+        android:layout_height="56dp"
+        android:background="@drawable/some_id"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/gray_dark"
+        app:layout_constraintStart_toStartOf="@id/departure"
+        app:layout_constraintTop_toBottomOf="@id/second"/>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/red_ball"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="@id/third"
+        app:layout_constraintTop_toTopOf="@id/third"/>
+
+    <TextView
+        android:id="@+id/third_title"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        android:textSize="14sp"
+        android:text="@string/sochi"
+        app:layout_constraintStart_toStartOf="@id/third"
+        app:layout_constraintTop_toTopOf="@id/third"/>
 
     <ImageView
         android:id="@+id/button_show_more_direct"

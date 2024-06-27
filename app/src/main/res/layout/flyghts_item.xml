@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="24dp"
+    tools:ignore="RtlSymmetry">
+
+    <View
+        android:id="@+id/card"
+        android:layout_width="328dp"
+        android:layout_height="117dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6dp"
+        android:background="@color/gray_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/note"
+        android:layout_width="112dp"
+        android:layout_height="17dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rectangle_bottom"
+        android:backgroundTint="@color/search_blue"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sochi"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/note"
+        app:layout_constraintTop_toTopOf="@id/note"
+        app:layout_constraintEnd_toEndOf="@id/note"
+        app:layout_constraintBottom_toBottomOf="@id/note"/>
+    
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:text="@string/sochi"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:layout_marginTop="21dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/sfprodisplaysemibold"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+    <View
+        android:id="@+id/rectangle_2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="23dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/red_ball"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintTop_toTopOf="@id/card"
+        app:layout_constraintBottom_toBottomOf="@id/card"/>
+
+    <TextView
+        android:id="@+id/departure_time"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:text="@string/sochi"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="63dp"
+        android:layout_marginStart="48dp"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        app:layout_constraintStart_toStartOf="@id/card"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+    <TextView
+        android:id="@+id/arrival_time"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:text="@string/sochi"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="63dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        app:layout_constraintStart_toEndOf="@id/departure_time"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+    <TextView
+        android:id="@+id/airport_from"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="@string/sochi"
+        android:textColor="@color/main_text_where_to_go"
+        android:textSize="14sp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        app:layout_constraintStart_toStartOf="@id/departure_time"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+    <TextView
+        android:id="@+id/airport_to"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="@string/sochi"
+        android:textColor="@color/main_text_where_to_go"
+        android:textSize="14sp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/sfprodisplayregularitalic"
+        app:layout_constraintStart_toStartOf="@id/arrival_time"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+    <View
+        android:id="@+id/vector_77"
+        android:layout_width="10dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/vector_77"
+        app:layout_constraintStart_toStartOf="@id/departure_time"
+        app:layout_constraintEnd_toEndOf="@id/arrival_time"
+        app:layout_constraintTop_toTopOf="@id/card"/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

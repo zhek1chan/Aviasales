@@ -23,4 +23,13 @@
     <string name="show_all_tickets">Посмотреть все билеты</string>
     <string name="show_all">Показать все</string>
     <string name="minsk">Минск</string>
+    <string name="filter">Фильтр</string>
+    <string name="diagram">График</string>
+    <string name="aviatickets">Авиабилеты</string>
+    <string name="hotels">Отели</string>
+    <string name="less_long">Короче</string>
+    <string name="subscribes">Подписки</string>
+    <string name="profile">Профиль</string>
+    <string name="preference_file_key">KEY_FROM</string>
+    <string name="amount">%1$s ₽</string>
 </resources>

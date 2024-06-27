@@ -1,13 +1,16 @@
-package com.example.aviasales.ui.home
+package com.example.aviasales.presentation.dashboard
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class DashboardViewModel : ViewModel() {
+    fun getData(): List<Recommendation> {
+
+    }
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is dashboard Fragment"
     }
     val text: LiveData<String> = _text
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".presentation.dashboard.DashboardFragment">
 
     <TextView
         android:id="@+id/text_dashboard"
@@ -97,7 +97,7 @@
             android:importantForAccessibility="no">
         </ImageView>
 
-        <EditText
+        <TextView
             android:id="@+id/to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
             android:textColor="@color/main_text_where_to_go"
             app:layout_constraintStart_toStartOf="@id/text_frame"
             app:layout_constraintTop_toTopOf="@id/text_frame">
-        </EditText>
+        </TextView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     
@@ -132,28 +132,28 @@
         app:layout_constraintTop_toTopOf="parent">
     </TextView>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="542dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="213.16dp"
-        android:layout_marginTop="350dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="350dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    </androidx.recyclerview.widget.RecyclerView>
-    <!--
-    <ImageView
-        android:id="@+id/button_big_"
-        android:layout_width="328dp"
-        android:layout_height="42dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="176dp"
-        android:clipToOutline="true"
-        android:background="@drawable/button_big"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    </ImageView> -->
-
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,4 +18,5 @@
     <color name="gray">#5E5F61</color>
     <color name="gray_dark">#1D1E20</color>
     <color name="near_to_white">#DBDBDB</color>
+    <color name="basic_gray">#242529</color>
 </resources>
