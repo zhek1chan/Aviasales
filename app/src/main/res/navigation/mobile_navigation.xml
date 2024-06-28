@@ -13,7 +13,7 @@
 
     <fragment
         android:id="@+id/navigation_search_main"
-        android:name="com.example.aviasales.presentation.MainFragment.MainFragment"
+        android:name="com.example.aviasales.presentation.main.MainFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_main" />
 

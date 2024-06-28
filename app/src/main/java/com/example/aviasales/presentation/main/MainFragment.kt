@@ -1,4 +1,4 @@
-package com.example.aviasales.presentation.MainFragment
+package com.example.aviasales.presentation.main
 
 import android.content.Context
 import android.os.Bundle

@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="@id/buttons_holder_bottomsheet"/>
 
     <TextView
-        android:id="@+id/from_bottomsheet"
+        android:id="@+id/from_search"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:textSize="16sp"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="@id/buttons_holder_bottomsheet"/>
 
     <TextView
-        android:id="@+id/bottomsheet"
+        android:id="@+id/to_search"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:textSize="16sp"

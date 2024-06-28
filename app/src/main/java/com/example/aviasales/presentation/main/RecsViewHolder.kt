@@ -1,4 +1,4 @@
-package com.example.aviasales.presentation.MainFragment
+package com.example.aviasales.presentation.main
 
 import android.graphics.drawable.Drawable
 import androidx.recyclerview.widget.RecyclerView
