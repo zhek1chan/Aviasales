@@ -1,16 +1,10 @@
 package com.example.aviasales.presentation.main
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.aviasales.data.Recommendation
 
 class MainViewModel : ViewModel() {
     fun getData(): List<Recommendation> {
-
+        return emptyList()
     }
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is dashboard Fragment"
-    }
-    val text: LiveData<String> = _text
 }

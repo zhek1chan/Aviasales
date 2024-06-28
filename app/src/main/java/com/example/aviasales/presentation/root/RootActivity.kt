@@ -1,10 +1,8 @@
 package com.example.aviasales.presentation.root
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.fragment.NavHostFragment
 import com.example.aviasales.R
 import com.example.aviasales.databinding.ActivityMainBinding
 
@@ -17,11 +15,11 @@ class RootActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val navView: BottomNavigationView = binding.bottomNavigationView
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        navView.setupWithNavController(navController)
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main) as NavHostFragment
+        val navController = navHostFragment.navController
         /*navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.playerActivity || destination.id == R.id.createPlaylistFragment || destination.id == R.id.playlistFragment) {
+            if () {
 
                 bottomNavigationView.visibility = View.GONE
             } else {

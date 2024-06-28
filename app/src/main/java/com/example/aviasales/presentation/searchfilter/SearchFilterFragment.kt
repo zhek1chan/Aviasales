@@ -16,7 +16,6 @@ class SearchFilterFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var fromText: String
     private lateinit var toText: String
-    private val viewModel by viewModel<FilterViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

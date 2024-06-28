@@ -55,6 +55,7 @@
         app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tickets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
@@ -66,11 +67,11 @@
         android:id="@+id/buttons_holder"
         android:layout_width="203dp"
         android:layout_height="37dp"
-        android:layout_marginTop="647dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/button_for_departures_screen"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/diagram"
