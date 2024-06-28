@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_aviatickets"
-        android:name="com.example.aviasales.presentation.home.HomeFragment"
+        android:name="com.example.aviasales.presentation.filters.FilterFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_hotels"
-        android:name="com.example.aviasales.presentation.dashboard.DashboardFragment"
+        android:id="@+id/navigation_search_main"
+        android:name="com.example.aviasales.presentation.MainFragment.MainFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_main" />
 
     <fragment
-        android:id="@+id/navigation_less_long"
-        android:name="com.example.aviasales.presentation.notifications.NotificationsFragment"
+        android:id="@+id/navigation_search_filter"
+        android:name="com.example.aviasales.presentation.searchfilter.SearchFilterFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_search" />
 </navigation>

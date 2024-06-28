@@ -1,4 +1,4 @@
-package com.example.aviasales.presentation.activity
+package com.example.aviasales.presentation.root
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

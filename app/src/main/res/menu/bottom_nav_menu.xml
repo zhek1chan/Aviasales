@@ -8,12 +8,12 @@
         android:title="@string/aviatickets"/>
 
     <item
-        android:id="@+id/navigation_hotels"
+        android:id="@+id/navigation_search_main"
         android:icon="@drawable/hotel"
         android:title="@string/hotels" />
 
     <item
-        android:id="@+id/navigation_less_long"
+        android:id="@+id/navigation_search_filter"
         android:icon="@drawable/location"
         android:title="@string/less_long" />
 

@@ -128,9 +128,17 @@
         app:layout_constraintTop_toTopOf="@id/card"/>
 
 
-
-
-
+    <TextView
+        android:id="@+id/time_in_flyight"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="@string/sochi"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginStart="13dp"
+        android:fontFamily="@font/sfprodisplaysemibold"
+        app:layout_constraintStart_toEndOf="@id/arrival_time"
+        app:layout_constraintTop_toTopOf="@id/arrival_time"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

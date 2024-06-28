@@ -1,10 +1,10 @@
-package com.example.aviasales.presentation.dashboard
+package com.example.aviasales.presentation.MainFragment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class DashboardViewModel : ViewModel() {
+class MainViewModel : ViewModel() {
     fun getData(): List<Recommendation> {
 
     }

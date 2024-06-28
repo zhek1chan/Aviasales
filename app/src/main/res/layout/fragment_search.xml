@@ -7,7 +7,7 @@
     android:background="@color/black">
 
     <View
-        android:id="@+id/some_id"
+        android:id="@+id/buttons_holder_bottomsheet"
         android:layout_width="match_parent"
         android:layout_height="96dp"
         android:layout_centerHorizontal="true"
@@ -24,9 +24,9 @@
         android:layout_height="24dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/left_arrow"
-        app:layout_constraintBottom_toBottomOf="@id/some_id"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id" />
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <ImageView
         android:id="@+id/change"
@@ -36,11 +36,11 @@
         android:layout_marginBottom="56dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/near_to_white"
-        app:layout_constraintBottom_toBottomOf="@id/some_id"
-        app:layout_constraintEnd_toEndOf="@id/some_id"/>
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintEnd_toEndOf="@id/buttons_holder_bottomsheet"/>
 
     <TextView
-        android:id="@+id/from"
+        android:id="@+id/from_bottomsheet"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:textSize="16sp"
@@ -50,8 +50,8 @@
         android:layout_marginTop="18dp"
         android:layout_marginStart="40dp"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id"/>
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet"/>
 
     <ImageView
         android:id="@+id/close"
@@ -60,11 +60,11 @@
         android:background="@drawable/icon_close"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/some_id"
-        app:layout_constraintEnd_toEndOf="@id/some_id"/>
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintEnd_toEndOf="@id/buttons_holder_bottomsheet"/>
 
     <TextView
-        android:id="@+id/to"
+        android:id="@+id/bottomsheet"
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:textSize="16sp"
@@ -74,12 +74,12 @@
         android:layout_marginTop="58dp"
         android:layout_marginStart="40dp"
         android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id"/>
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet"/>
 
 
     <ImageView
-        android:id="@+id/vector_75"
+        android:id="@+id/stick"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="56dp"
@@ -88,7 +88,7 @@
         android:background="@drawable/vector_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/some_id" />
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/button_back_route"
@@ -96,8 +96,8 @@
         android:layout_height="33dp"
         android:layout_marginTop="13dp"
         android:background="@drawable/button_small"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toBottomOf="@id/some_id">
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toBottomOf="@id/buttons_holder_bottomsheet">
 
         <ImageView
             android:layout_width="16dp"
@@ -112,12 +112,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:fontFamily="@font/sfprodisplayregular"
+            android:fontFamily="@font/sfprodisplayregularitalic"
             android:text="@string/back"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -130,17 +129,16 @@
         android:layout_marginStart="93dp"
         android:layout_marginTop="13dp"
         android:background="@drawable/button_small"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toBottomOf="@id/some_id">
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toBottomOf="@id/buttons_holder_bottomsheet">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/sfprodisplayregular"
+            android:fontFamily="@font/sfprodisplayregularitalic"
             android:text="@string/date"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -154,8 +152,8 @@
         android:layout_marginStart="186dp"
         android:layout_marginTop="13dp"
         android:background="@drawable/button_small"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toBottomOf="@id/some_id">
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toBottomOf="@id/buttons_holder_bottomsheet">
 
         <ImageView
             android:layout_width="16dp"
@@ -170,12 +168,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:fontFamily="@font/sfprodisplayregular"
+            android:fontFamily="@font/sfprodisplayregularitalic"
             android:text="@string/person_and_type"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -188,8 +185,8 @@
         android:layout_marginStart="315dp"
         android:layout_marginTop="13dp"
         android:background="@drawable/button_small"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toBottomOf="@id/some_id">
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toBottomOf="@id/buttons_holder_bottomsheet">
 
         <ImageView
             android:layout_width="16dp"
@@ -204,12 +201,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:fontFamily="@font/sfprodisplayregular"
+            android:fontFamily="@font/sfprodisplayregularitalic"
             android:text="@string/filters"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -262,16 +258,26 @@
 
     <TextView
         android:id="@+id/first_title"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="32dp"
-        android:textColor="@color/white"
-        android:text="@string/sochi"
-        android:fontFamily="@font/sfprodisplayregularitalic"
-        android:textSize="14sp"
+        style="@style/search_rec_title"
         app:layout_constraintStart_toStartOf="@id/first"
         app:layout_constraintTop_toTopOf="@id/first"/>
+
+    <TextView
+        android:id="@+id/first_timings"
+        style="@style/search_rec_timings"
+        app:layout_constraintStart_toStartOf="@id/first_title"
+        app:layout_constraintTop_toBottomOf="@id/first_title"/>
+
+    <TextView
+        android:id="@+id/first_price"
+        style="@style/search_rec_price"
+        app:layout_constraintStart_toStartOf="@id/first"
+        app:layout_constraintTop_toTopOf="@id/first_title"/>
+
+    <ImageView
+        style="@style/search_rec_arrow"
+        app:layout_constraintEnd_toEndOf="@id/first"
+        app:layout_constraintTop_toTopOf="@id/first_price"/>
 
     <RelativeLayout
         android:id="@+id/second"
@@ -295,16 +301,26 @@
 
     <TextView
         android:id="@+id/second_title"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="32dp"
-        android:textColor="@color/white"
-        android:text="@string/sochi"
-        android:fontFamily="@font/sfprodisplayregularitalic"
-        android:textSize="14sp"
+        style="@style/search_rec_title"
         app:layout_constraintStart_toStartOf="@id/second"
         app:layout_constraintTop_toTopOf="@id/second"/>
+
+    <TextView
+        android:id="@+id/second_timings"
+        style="@style/search_rec_timings"
+        app:layout_constraintStart_toStartOf="@id/second_title"
+        app:layout_constraintTop_toBottomOf="@id/second_title"/>
+
+    <TextView
+        android:id="@+id/second_price"
+        style="@style/search_rec_price"
+        app:layout_constraintStart_toStartOf="@id/second"
+        app:layout_constraintTop_toTopOf="@id/second_title"/>
+
+    <ImageView
+        style="@style/search_rec_arrow"
+        app:layout_constraintEnd_toEndOf="@id/second"
+        app:layout_constraintTop_toTopOf="@id/second_price"/>
 
     <RelativeLayout
         android:id="@+id/third"
@@ -328,16 +344,26 @@
 
     <TextView
         android:id="@+id/third_title"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="32dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/sfprodisplayregularitalic"
-        android:textSize="14sp"
-        android:text="@string/sochi"
+        style="@style/search_rec_title"
         app:layout_constraintStart_toStartOf="@id/third"
         app:layout_constraintTop_toTopOf="@id/third"/>
+
+    <TextView
+        android:id="@+id/third_timings"
+        style="@style/search_rec_timings"
+        app:layout_constraintStart_toStartOf="@id/third_title"
+        app:layout_constraintTop_toBottomOf="@id/third_title"/>
+
+    <TextView
+        android:id="@+id/third_price"
+        style="@style/search_rec_price"
+        app:layout_constraintStart_toStartOf="@id/third"
+        app:layout_constraintTop_toTopOf="@id/third_title"/>
+
+    <ImageView
+        style="@style/search_rec_arrow"
+        app:layout_constraintEnd_toEndOf="@id/third"
+        app:layout_constraintTop_toTopOf="@id/third_price"/>
 
     <ImageView
         android:id="@+id/button_show_more_direct"

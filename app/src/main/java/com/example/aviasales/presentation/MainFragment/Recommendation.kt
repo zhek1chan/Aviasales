@@ -1,4 +1,4 @@
-package com.example.aviasales.presentation.dashboard
+package com.example.aviasales.presentation.MainFragment
 
 data class Recommendation(
         val id: Int,

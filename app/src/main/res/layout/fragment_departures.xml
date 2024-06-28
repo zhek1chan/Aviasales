@@ -6,7 +6,7 @@
     android:background="@color/black">
 
     <View
-        android:id="@+id/some_id"
+        android:id="@+id/buttons_holder_bottomsheet"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentStart="true"
@@ -23,9 +23,9 @@
         android:layout_height="24dp"
         android:background="@drawable/left_arrow"
         android:backgroundTint="@color/search_blue"
-        app:layout_constraintBottom_toBottomOf="@id/some_id"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id" />
+        app:layout_constraintBottom_toBottomOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <TextView
         android:id="@+id/from_to"
@@ -37,8 +37,8 @@
         android:text="@string/minsk"
         android:textColor="@color/white"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id" />
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <TextView
         android:id="@+id/info"
@@ -51,8 +51,8 @@
         android:textColor="@color/main_text_where_to_go"
         android:textSize="14sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="@id/some_id"
-        app:layout_constraintTop_toTopOf="@id/some_id" />
+        app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
+        app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

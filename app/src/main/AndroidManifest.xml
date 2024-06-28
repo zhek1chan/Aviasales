@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Aviasales"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.activity.RootActivity"
+            android:name=".presentation.root.RootActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
