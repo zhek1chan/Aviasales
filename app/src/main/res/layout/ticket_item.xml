@@ -16,29 +16,36 @@
         android:background="@color/gray_dark"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/note"
-        android:layout_width="112dp"
-        android:layout_height="17dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/rectangle_bottom"
-        android:backgroundTint="@color/search_blue"
-        android:visibility="visible"/>
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/badge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sochi"
-        android:fontFamily="@font/sfprodisplayregular"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@id/note"
-        app:layout_constraintTop_toTopOf="@id/note"
-        app:layout_constraintEnd_toEndOf="@id/note"
-        app:layout_constraintBottom_toBottomOf="@id/note"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <View
+            android:id="@+id/note"
+            android:layout_width="112dp"
+            android:layout_height="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/rectangle_bottom"
+            android:backgroundTint="@color/search_blue"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/note_text"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:text="@string/sochi"
+            android:fontFamily="@font/sfprodisplayregularitalic"
+            android:textColor="@color/white"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toStartOf="@id/note"
+            app:layout_constraintTop_toTopOf="@id/note"
+            app:layout_constraintEnd_toEndOf="@id/note"
+            app:layout_constraintBottom_toBottomOf="@id/note"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
     
     <TextView
         android:id="@+id/amount"

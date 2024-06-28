@@ -16,7 +16,6 @@ class SearchFilterFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var fromText: String
     private lateinit var toText: String
-    private val viewModel by viewModel<FilterViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,8 +30,8 @@ class SearchFilterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fromText = arguments?.getString("from")!!
         toText = arguments?.getString("to")!!
-        binding.from.text = fromText
-        binding.to.text = toText
+        binding.fromSearch.text = fromText
+        binding.toSearch.text = toText
         onSearchTextChangeListener()
         onCloseClickListener()
 
@@ -40,14 +39,14 @@ class SearchFilterFragment : Fragment() {
 
     //по клику enter запускается экран поиска
     private fun onSearchTextChangeListener() {
-        binding.to.addTextChangedListener(object : TextWatcher {
+        binding.toSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (binding.to.text.isNotEmpty()) {
-                    toText = binding.to.text.toString()
+                if (binding.toSearch.text.isNotEmpty()) {
+                    toText = binding.toSearch.text.toString()
                 }
             }
 
@@ -60,7 +59,7 @@ class SearchFilterFragment : Fragment() {
 
     private fun onCloseClickListener() {
         binding.close.setOnClickListener {
-            binding.to.text = ""
+            binding.toSearch.text = ""
         }
     }
 

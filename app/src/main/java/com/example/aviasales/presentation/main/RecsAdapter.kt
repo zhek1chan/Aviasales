@@ -1,8 +1,9 @@
-package com.example.aviasales.presentation.MainFragment
+package com.example.aviasales.presentation.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aviasales.data.Recommendation
 import com.example.aviasales.databinding.RecomendationItemBinding
 
 class RecsAdapter : RecyclerView.Adapter<RecsViewHolder>() {

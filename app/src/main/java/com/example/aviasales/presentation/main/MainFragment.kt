@@ -1,4 +1,4 @@
-package com.example.aviasales.presentation.MainFragment
+package com.example.aviasales.presentation.main
 
 import android.content.Context
 import android.os.Bundle
@@ -13,7 +13,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.aviasales.R
+import com.example.aviasales.data.Recommendation
 import com.example.aviasales.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,7 +29,7 @@ class MainFragment : Fragment() {
     private lateinit var recsAdapter: RecsAdapter
     private val binding get() = _binding!!
     private lateinit var departureFromText: String
-    private lateinit var departureToText: String
+    private var departureToText = ""
     private val viewModel by viewModel<MainViewModel>()
 
     override fun onCreateView(
@@ -42,28 +46,37 @@ class MainFragment : Fragment() {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
         if (sharedPref.getString(getString(R.string.preference_file_key), "") != null) {
             departureFromText = sharedPref.getString(getString(R.string.preference_file_key), "")!!
+            binding.from.setText(departureFromText)
+            binding.fromBottomsheet.text = departureFromText
         }
+        recsAdapter = RecsAdapter()
         recyclerView = binding.rv
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recsAdapter
+        changeImg()
         onSearchTextChange()
         onDestinationTextViewClicked()
 
     }
 
     private fun onDestinationTextViewClicked() {
-        val bottomSheetContainer = binding.searchBottomsheet
-        val bottomSheetBehavior =
-            BottomSheetBehavior.from(bottomSheetContainer)
-        if (departureFromText.isNotEmpty()) {
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
+        if (departureFromText.isNotEmpty() or binding.from.text.isNotEmpty()) {
             binding.to.setOnClickListener {
                 binding.searchBottomsheet.visibility = View.VISIBLE
+                binding.mainPage.isClickable = false
                 bottomSheetBehavior.apply {
                     state = BottomSheetBehavior.STATE_EXPANDED
                 }
+                onDepartureToTextChange()
+                onClearClickListener()
+                bottomSheetButtonsListener()
             }
         } else bottomSheetBehavior.apply {
             state = BottomSheetBehavior.STATE_HIDDEN
+        }
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_HIDDEN) {
+            binding.mainPage.isClickable = true
         }
     }
 
@@ -95,6 +108,36 @@ class MainFragment : Fragment() {
 
             }
         })
+    }
+
+    private fun onDepartureToTextChange() {
+        binding.toBottomsheet.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.toBottomsheet.text.isNotEmpty()) {
+                    departureToText = binding.toBottomsheet.text.toString()
+                    navigateToSearchFilter()
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
+        })
+
+        binding.toBottomsheet.setOnClickListener {
+            if (binding.toBottomsheet.text.isNotEmpty()) {
+                departureToText = binding.toBottomsheet.text.toString()
+                navigateToSearchFilter()
+            }
+        }
+    }
+
+    private fun navigateToSearchFilter() {
         binding.toBottomsheet.setOnEditorActionListener { v, actionId, event ->
             if (actionId === EditorInfo.IME_ACTION_DONE) {
                 val bundle = Bundle()
@@ -107,14 +150,48 @@ class MainFragment : Fragment() {
         }
     }
 
-    private fun ondepartureToTextClick() {
-        if (departureFromText.isNotEmpty()) {
-            binding.to.setOnClickListener {
-                val bundle = Bundle()
-                bundle.putString("from", departureFromText)
-                findNavController().navigate(R.id.navigation_search_filter, bundle)
-            }
+    private fun onClearClickListener() {
+        binding.close.setOnClickListener {
+            binding.toBottomsheet.text.clear()
         }
+    }
+
+    private fun bottomSheetButtonsListener() {
+        binding.fireSaleContainer.setOnClickListener {
+            findNavController().navigate(R.id.hotSalesFragment)
+        }
+
+        binding.hardDirectionsContainer.setOnClickListener {
+            findNavController().navigate(R.id.hardRouteFragment)
+        }
+
+        binding.weekendsContainer.setOnClickListener {
+            findNavController().navigate(R.id.weekendsFragment)
+        }
+
+        binding.goEverywhereContainer.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.go_everywhere)
+        }
+
+    }
+
+    private fun changeImg() {
+        val cornerPixelSize = resources.getDimensionPixelSize(R.dimen.photo_cover_corner_radius)
+        Glide.with(this)
+            .load(R.drawable.istambul)
+            .placeholder(R.drawable.search_rounded_icons)
+            .transform(CenterCrop(), RoundedCorners(cornerPixelSize))
+            .into(binding.stambulCover)
+        Glide.with(this)
+            .load(R.drawable.sochi)
+            .placeholder(R.drawable.search_rounded_icons)
+            .transform(CenterCrop(), RoundedCorners(cornerPixelSize))
+            .into(binding.sochiCover)
+        Glide.with(this)
+            .load(R.drawable.phuket)
+            .placeholder(R.drawable.search_rounded_icons)
+            .transform(CenterCrop(), RoundedCorners(cornerPixelSize))
+            .into(binding.phuketCover)
     }
 
     override fun onDestroyView() {

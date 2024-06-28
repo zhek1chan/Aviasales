@@ -3,23 +3,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_aviatickets">
-
-    <fragment
-        android:id="@+id/navigation_aviatickets"
-        android:name="com.example.aviasales.presentation.filters.FilterFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+    app:startDestination="@id/navigation_search_main">
 
     <fragment
         android:id="@+id/navigation_search_main"
-        android:name="com.example.aviasales.presentation.MainFragment.MainFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_main" />
+        android:name="com.example.aviasales.presentation.main.MainFragment"
+        android:label="@string/aviatickets"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_navigation_search_main_to_navigation_search_filter"
+            app:destination="@id/navigation_search_filter" />
+        <action
+            android:id="@+id/action_navigation_search_main_to_hardRoute"
+            app:destination="@id/hardRouteFragment" />
+        <action
+            android:id="@+id/action_navigation_search_main_to_hotSalesFragment"
+            app:destination="@id/hotSalesFragment" />
+        <action
+            android:id="@+id/action_navigation_search_main_to_weekendsFragment"
+            app:destination="@id/weekendsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_search_filter"
         android:name="com.example.aviasales.presentation.searchfilter.SearchFilterFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_search" />
+        android:label="SearchFilterFragment"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_filter_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscribesFragment"
+        android:name="com.example.aviasales.presentation.subscribes.SubscribesFragment"
+        android:label="SubscribesFragment" />
+    <fragment
+        android:id="@+id/shortFragment"
+        android:name="com.example.aviasales.presentation.short.ShortFragment"
+        android:label="ShortFragment" />
+    <fragment
+        android:id="@+id/hotelsFragment"
+        android:name="com.example.aviasales.presentation.hotels.HotelsFragment"
+        android:label="HotelsFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.aviasales.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="com.example.aviasales.presentation.tickets.TicketsFragment"
+        android:label="TicketsFragment" />
+    <fragment
+        android:id="@+id/hardRouteFragment"
+        android:name="com.example.aviasales.presentation.hardroute.HardRouteFragment"
+        android:label="HardRoute" />
+    <fragment
+        android:id="@+id/hotSalesFragment"
+        android:name="com.example.aviasales.presentation.hotsales.HotSalesFragment"
+        android:label="HotSalesFragment" />
+    <fragment
+        android:id="@+id/weekendsFragment"
+        android:name="com.example.aviasales.presentation.weekends.WeekendsFragment"
+        android:label="WeekendsFragment" />
 </navigation>
