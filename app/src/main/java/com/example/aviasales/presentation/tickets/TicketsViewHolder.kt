@@ -3,8 +3,8 @@ package com.example.aviasales.presentation.tickets
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aviasales.R
-import com.example.aviasales.data.Ticket
 import com.example.aviasales.databinding.TicketItemBinding
+import com.example.aviasales.domain.model.Ticket
 import java.util.Locale
 
 class TicketsViewHolder(private val binding: TicketItemBinding) :
@@ -16,10 +16,10 @@ class TicketsViewHolder(private val binding: TicketItemBinding) :
             binding.badge.visibility = View.VISIBLE
             binding.noteText.text = item.badge
         }
-        binding.departureTime.text = item.departure.date
-        binding.arrivalTime.text = item.arrival.date
-        binding.airportFrom.text = item.departure.airport
-        binding.airportTo.text = item.arrival.airport
+        binding.departureTime.text = item.departureDate
+        binding.arrivalTime.text = item.arrivalDate
+        binding.airportFrom.text = item.departureAirport
+        binding.airportTo.text = item.arrivalAirport
         var amount = "%,d".format(Locale.US, item.price)
         amount = amount.replace(',', ' ')
         binding.amount.text = itemView.resources.getString(R.string.amount, amount)

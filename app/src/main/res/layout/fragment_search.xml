@@ -426,6 +426,36 @@
         app:layout_constraintStart_toStartOf="@id/button_show_more"
         app:layout_constraintTop_toTopOf="@id/button_show_more" />
 
+    <TextView
+        android:id="@+id/subscribe"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:paddingStart="16dp"
+        android:drawablePadding="8dp"
+        android:background="@drawable/rectangle_8"
+        android:backgroundTint="@color/gray_dark"
+        android:text="Подписка не цену"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        app:drawableTint="@color/search_blue"
+        app:drawableStartCompat="@drawable/bell"
+        app:layout_constraintTop_toBottomOf="@id/button_show_more_card"
+        app:layout_constraintStart_toStartOf="@id/button_show_more_card"
+        app:layout_constraintEnd_toEndOf="@id/button_show_more_card"
+        />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/subscribe_switcher"
+        style="@style/switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@id/subscribe"
+        app:layout_constraintTop_toTopOf="@id/subscribe"
+        app:layout_constraintBottom_toBottomOf="@id/subscribe"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

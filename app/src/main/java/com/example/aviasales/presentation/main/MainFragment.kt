@@ -1,6 +1,5 @@
 package com.example.aviasales.presentation.main
 
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,7 +16,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.aviasales.R
-import com.example.aviasales.data.Recommendation
 import com.example.aviasales.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -43,12 +41,9 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        if (sharedPref.getString(getString(R.string.preference_file_key), "") != null) {
-            departureFromText = sharedPref.getString(getString(R.string.preference_file_key), "")!!
-            binding.from.setText(departureFromText)
-            binding.fromBottomsheet.text = departureFromText
-        }
+        departureFromText = viewModel.getDepartureCity()
+        Log.d("MainFragment", "Got $departureFromText from sp")
+        binding.from.setText(departureFromText)
         recsAdapter = RecsAdapter()
         recyclerView = binding.rv
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -59,6 +54,7 @@ class MainFragment : Fragment() {
                 state = BottomSheetBehavior.STATE_EXPANDED
             }
         }
+        getData()
         changeImg()
         onSearchTextChange()
         onDestinationTextViewClicked()
@@ -88,9 +84,10 @@ class MainFragment : Fragment() {
     }
 
     private fun getData() {
-        val data: List<Recommendation> = viewModel.getData()
-        recsAdapter.setItems(data)
-        Log.d("MainFragment", "Data was passed to adapter")
+        viewModel.getData()
+        viewModel.observeOffers().observe(viewLifecycleOwner) { offers ->
+            recsAdapter.setItems(offers)
+        }
     }
 
     private fun onSearchTextChange() {
@@ -100,15 +97,10 @@ class MainFragment : Fragment() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (binding.from.text.isNotEmpty()) {
-                    departureFromText = binding.from.text.toString()
-                    binding.fromBottomsheet.text = departureFromText
-                    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-                    with (sharedPref.edit()) {
-                        putString(getString(R.string.preference_file_key), departureFromText)
-                        apply()
-                    }
-                }
+                departureFromText = p0.toString()
+                binding.fromBottomsheet.text = departureFromText
+                Log.d("MainFragment", "Saved $departureFromText to sp")
+                viewModel.setDepartureCity(departureFromText)
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -145,7 +137,7 @@ class MainFragment : Fragment() {
     }
 
     private fun navigateToSearchFilter() {
-        binding.toBottomsheet.setOnEditorActionListener { v, actionId, event ->
+        binding.toBottomsheet.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val bundle = Bundle()
                 bundle.putString("from", departureFromText)

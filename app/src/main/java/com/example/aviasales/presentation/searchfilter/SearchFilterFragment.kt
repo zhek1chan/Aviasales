@@ -13,7 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.aviasales.R
 import com.example.aviasales.databinding.FragmentSearchBinding
+import com.example.aviasales.domain.model.TicketsRec
 import kotlinx.datetime.Month
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -26,6 +28,7 @@ class SearchFilterFragment : Fragment() {
     private var y = 0
     private var m = 0
     private var d = 0
+    private val viewModel by viewModel<SearchFilterViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -62,7 +65,10 @@ class SearchFilterFragment : Fragment() {
         )
         onSearchTextChangeListener()
         destinationButtonsListener()
-
+        viewModel.getData()
+        viewModel.observeData().observe(viewLifecycleOwner) { offers ->
+            bindData(offers)
+        }
     }
 
     private fun onSearchTextChangeListener() {
@@ -105,7 +111,7 @@ class SearchFilterFragment : Fragment() {
         binding.buttonBackRoute.setOnClickListener{
             val datePickerDialog = DatePickerDialog(
                 requireActivity(),
-                { view, year, monthOfYear, dayOfMonth ->
+                { _, _, _, _ ->
 
                 },
                 y,
@@ -119,7 +125,7 @@ class SearchFilterFragment : Fragment() {
         binding.buttonDate.setOnClickListener {
             val datePickerDialog = DatePickerDialog(
                 requireActivity(),
-                { view, year, monthOfYear, dayOfMonth ->
+                { _, year, monthOfYear, dayOfMonth ->
                     val fullMonth = Month(monthOfYear).toString().lowercase()
                     val smallMonth = "${fullMonth[0]}${fullMonth[1]}${fullMonth[2]}"
                     val simpledateformat = SimpleDateFormat("EEEE")
@@ -146,6 +152,22 @@ class SearchFilterFragment : Fragment() {
             bundle.putString("to", binding.toSearch.text.toString())
             bundle.putString("date", binding.date.text.toString())
             findNavController().navigate(R.id.ticketsFragment, bundle)
+        }
+    }
+
+    private fun bindData(list: List<TicketsRec>) {
+        with(binding){
+            firstTitle.text = list[0].title
+            firstPrice.text = list[0].price
+            firstTimings.text = list[0].timeRange
+
+            secondTitle.text = list[1].title
+            secondPrice.text = list[1].price
+            secondTimings.text = list[1].timeRange
+
+            thirdTitle.text = list[2].title
+            thirdPrice.text = list[2].price
+            thirdTimings.text = list[2].timeRange
         }
     }
 

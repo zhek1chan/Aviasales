@@ -3,8 +3,8 @@ package com.example.aviasales.presentation.tickets
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aviasales.data.Ticket
 import com.example.aviasales.databinding.TicketItemBinding
+import com.example.aviasales.domain.model.Ticket
 
 class TicketsAdapter : RecyclerView.Adapter<TicketsViewHolder>() {
 

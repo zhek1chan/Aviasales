@@ -43,4 +43,8 @@
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:layout_marginEnd">10dp</item>
     </style>
+
+    <style name="switcher" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/search_blue</item>
+    </style>
 </resources>

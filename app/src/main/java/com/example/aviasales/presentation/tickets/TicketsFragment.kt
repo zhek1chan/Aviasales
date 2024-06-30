@@ -44,14 +44,16 @@ class TicketsFragment : Fragment() {
         recyclerView = binding.rvTickets
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = ticketsAdapter
-        getData(fromText, toText)
+        getData()
         binding.info.text = info + getString(R.string.passenger)
         backButtonListener()
     }
 
-    private fun getData(from: String, to: String) {
-        //val data: List<Ticket> = viewModel.getData(from, to)
-        //ticketsAdapter.setItems(data)
+    private fun getData() {
+        viewModel.getData()
+        viewModel.observeTicks().observe(viewLifecycleOwner) { tickets ->
+            ticketsAdapter.setItems(tickets)
+        }
         Log.d("TicketsFragment", "Data was passed to adapter")
     }
 
