@@ -53,6 +53,12 @@ class MainFragment : Fragment() {
         recyclerView = binding.rv
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recsAdapter
+        if (arguments?.getBoolean("expand") != null) {
+            val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
+            bottomSheetBehavior.apply {
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
         changeImg()
         onSearchTextChange()
         onDestinationTextViewClicked()
@@ -71,6 +77,7 @@ class MainFragment : Fragment() {
                 onDepartureToTextChange()
                 onClearClickListener()
                 bottomSheetButtonsListener()
+                onRecDestinationItemClick()
             }
         } else bottomSheetBehavior.apply {
             state = BottomSheetBehavior.STATE_HIDDEN
@@ -139,14 +146,27 @@ class MainFragment : Fragment() {
 
     private fun navigateToSearchFilter() {
         binding.toBottomsheet.setOnEditorActionListener { v, actionId, event ->
-            if (actionId === EditorInfo.IME_ACTION_DONE) {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val bundle = Bundle()
                 bundle.putString("from", departureFromText)
                 bundle.putString("to", departureToText)
                 findNavController().navigate(R.id.navigation_search_filter, bundle)
                 return@setOnEditorActionListener true
+            } else {
+                false
             }
-            false
+        }
+    }
+
+    private fun onRecDestinationItemClick() {
+        binding.stambul.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.istambul)
+        }
+        binding.sochi.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.sochi)
+        }
+        binding.phuket.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.phuket)
         }
     }
 

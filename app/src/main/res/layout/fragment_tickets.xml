@@ -46,11 +46,10 @@
         android:layout_height="21dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="31dp"
-        android:fontFamily="@font/sfprodisplayregular"
+        android:fontFamily="@font/sfprodisplayregularitalic"
         android:text="@string/minsk"
         android:textColor="@color/main_text_where_to_go"
         android:textSize="14sp"
-        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="@id/buttons_holder_bottomsheet"
         app:layout_constraintTop_toTopOf="@id/buttons_holder_bottomsheet" />
 
@@ -113,7 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="21dp"
         android:layout_marginStart="4dp"
-        android:fontFamily="@font/sfprodisplayregular"
+        android:fontFamily="@font/sfprodisplayregularitalic"
         android:text="@string/diagram"
         android:textColor="@color/white"
         android:textSize="14sp"

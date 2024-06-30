@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aviasales.R
-import com.example.aviasales.data.Ticket
 import com.example.aviasales.databinding.FragmentTicketsBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,6 +19,7 @@ class TicketsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var fromText: String
     private lateinit var toText: String
+    private lateinit var info: String
     private lateinit var recyclerView: RecyclerView
     private var ticketsAdapter = TicketsAdapter()
     private val viewModel by viewModel<TicketsViewModel>()
@@ -37,16 +37,21 @@ class TicketsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fromText = arguments?.getString("from")!!
         toText = arguments?.getString("to")!!
+        info = arguments?.getString("date")!!
+        info = info.dropLast(4)
+        val route = getString(R.string.route_tickets_screen, fromText, toText)
+        binding.fromTo.text = route
         recyclerView = binding.rvTickets
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = ticketsAdapter
         getData(fromText, toText)
+        binding.info.text = info + getString(R.string.passenger)
         backButtonListener()
     }
 
     private fun getData(from: String, to: String) {
-        val data: List<Ticket> = viewModel.getData(from, to)
-        ticketsAdapter.setItems(data)
+        //val data: List<Ticket> = viewModel.getData(from, to)
+        //ticketsAdapter.setItems(data)
         Log.d("TicketsFragment", "Data was passed to adapter")
     }
 
