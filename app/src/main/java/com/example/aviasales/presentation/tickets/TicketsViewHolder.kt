@@ -16,6 +16,12 @@ class TicketsViewHolder(private val binding: TicketItemBinding) :
             binding.badge.visibility = View.VISIBLE
             binding.noteText.text = item.badge
         }
+        if (!item.transfer) {
+            binding.timeInFlyight.text =
+                "${item.timeInFlight}${itemView.resources.getString(R.string.without_transfer)}"
+        } else {
+            binding.timeInFlyight.text = item.timeInFlight
+        }
         binding.departureTime.text = item.departureDate
         binding.arrivalTime.text = item.arrivalDate
         binding.airportFrom.text = item.departureAirport

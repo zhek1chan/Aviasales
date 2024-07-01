@@ -37,4 +37,5 @@
     <string name="from_to">%1$s - %2$s</string>
     <string name="passenger">, 1 пассажир</string>
     <string name="route_tickets_screen">%1$s-%2$s</string>
+    <string name="without_transfer">" / Без пересадок"</string>
 </resources>
