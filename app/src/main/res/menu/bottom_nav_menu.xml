@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_aviatickets"
+        android:id="@+id/navigation_search_main"
         android:icon="@drawable/aviatickets"
         android:title="@string/aviatickets"/>
 
     <item
-        android:id="@+id/navigation_search_main"
+        android:id="@+id/hotelsFragment"
         android:icon="@drawable/hotel"
         android:title="@string/hotels" />
 
     <item
-        android:id="@+id/navigation_search_filter"
+        android:id="@+id/shortFragment"
         android:icon="@drawable/location"
         android:title="@string/less_long" />
 
     <item
-        android:id="@+id/navigation_subscribes"
+        android:id="@+id/subscribesFragment"
         android:icon="@drawable/bell"
         android:title="@string/subscribes" />
 
     <item
-        android:id="@+id/navigation_profile"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/person"
         android:title="@string/profile" />
 

@@ -1,11 +1,29 @@
 package com.example.aviasales.presentation.tickets
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.aviasales.data.Recommendation
-import com.example.aviasales.data.Ticket
+import androidx.lifecycle.viewModelScope
+import com.example.aviasales.data.network.Resource
+import com.example.aviasales.domain.interactor.TicketsInteractor
+import com.example.aviasales.domain.model.Ticket
+import kotlinx.coroutines.launch
 
-class TicketsViewModel : ViewModel() {
-    fun getData(from: String, to: String): List<Ticket> {
-        return emptyList()
+class TicketsViewModel(private val ticksInteractor: TicketsInteractor) : ViewModel() {
+
+    private val ticksLiveData = MutableLiveData<List<Ticket>>()
+
+    fun observeTicks(): LiveData<List<Ticket>> = ticksLiveData
+
+    fun getData() {
+        viewModelScope.launch {
+            ticksInteractor.getTickets().collect { offers ->
+                when (offers) {
+                    is Resource.Data -> ticksLiveData.postValue(offers.value)
+                    is Resource.ConnectionError -> Unit
+                    is Resource.NotFound -> Unit
+                }
+            }
+        }
     }
 }

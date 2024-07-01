@@ -1,6 +1,5 @@
 package com.example.aviasales.presentation.main
 
-import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,7 +16,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.aviasales.R
-import com.example.aviasales.data.Recommendation
 import com.example.aviasales.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -43,16 +41,20 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        if (sharedPref.getString(getString(R.string.preference_file_key), "") != null) {
-            departureFromText = sharedPref.getString(getString(R.string.preference_file_key), "")!!
-            binding.from.setText(departureFromText)
-            binding.fromBottomsheet.text = departureFromText
-        }
+        departureFromText = viewModel.getDepartureCity()
+        Log.d("MainFragment", "Got $departureFromText from sp")
+        binding.from.setText(departureFromText)
         recsAdapter = RecsAdapter()
         recyclerView = binding.rv
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recsAdapter
+        if (arguments?.getBoolean("expand") != null) {
+            val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
+            bottomSheetBehavior.apply {
+                state = BottomSheetBehavior.STATE_EXPANDED
+            }
+        }
+        getData()
         changeImg()
         onSearchTextChange()
         onDestinationTextViewClicked()
@@ -63,6 +65,7 @@ class MainFragment : Fragment() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
         if (departureFromText.isNotEmpty() or binding.from.text.isNotEmpty()) {
             binding.to.setOnClickListener {
+                binding.fromBottomsheet.text = binding.from.text
                 binding.searchBottomsheet.visibility = View.VISIBLE
                 binding.mainPage.isClickable = false
                 bottomSheetBehavior.apply {
@@ -71,6 +74,7 @@ class MainFragment : Fragment() {
                 onDepartureToTextChange()
                 onClearClickListener()
                 bottomSheetButtonsListener()
+                onRecDestinationItemClick()
             }
         } else bottomSheetBehavior.apply {
             state = BottomSheetBehavior.STATE_HIDDEN
@@ -81,9 +85,10 @@ class MainFragment : Fragment() {
     }
 
     private fun getData() {
-        val data: List<Recommendation> = viewModel.getData()
-        recsAdapter.setItems(data)
-        Log.d("MainFragment", "Data was passed to adapter")
+        viewModel.getData()
+        viewModel.observeOffers().observe(viewLifecycleOwner) { offers ->
+            recsAdapter.setItems(offers)
+        }
     }
 
     private fun onSearchTextChange() {
@@ -93,15 +98,10 @@ class MainFragment : Fragment() {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (binding.from.text.isNotEmpty()) {
-                    departureFromText = binding.from.text.toString()
-                    binding.fromBottomsheet.text = departureFromText
-                    val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-                    with (sharedPref.edit()) {
-                        putString(getString(R.string.preference_file_key), departureFromText)
-                        apply()
-                    }
-                }
+                departureFromText = p0.toString()
+                binding.fromBottomsheet.text = departureFromText
+                Log.d("MainFragment", "Saved $departureFromText to sp")
+                viewModel.setDepartureCity(departureFromText)
             }
 
             override fun afterTextChanged(p0: Editable?) {
@@ -138,15 +138,28 @@ class MainFragment : Fragment() {
     }
 
     private fun navigateToSearchFilter() {
-        binding.toBottomsheet.setOnEditorActionListener { v, actionId, event ->
-            if (actionId === EditorInfo.IME_ACTION_DONE) {
+        binding.toBottomsheet.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 val bundle = Bundle()
                 bundle.putString("from", departureFromText)
                 bundle.putString("to", departureToText)
                 findNavController().navigate(R.id.navigation_search_filter, bundle)
                 return@setOnEditorActionListener true
+            } else {
+                false
             }
-            false
+        }
+    }
+
+    private fun onRecDestinationItemClick() {
+        binding.stambul.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.istambul)
+        }
+        binding.sochi.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.sochi)
+        }
+        binding.phuket.setOnClickListener {
+            binding.toBottomsheet.setText(R.string.phuket)
         }
     }
 

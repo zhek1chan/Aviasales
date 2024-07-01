@@ -133,6 +133,7 @@
         app:layout_constraintTop_toBottomOf="@id/buttons_holder_bottomsheet">
 
         <TextView
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sfprodisplayregularitalic"
@@ -238,20 +239,12 @@
 
     <RelativeLayout
         android:id="@+id/first"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
+        style="@style/search_filter_recs_card"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toTopOf="@id/departure"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/search_light_red"
         app:layout_constraintStart_toStartOf="@id/first"
         app:layout_constraintTop_toTopOf="@id/first"/>
@@ -281,20 +274,13 @@
 
     <RelativeLayout
         android:id="@+id/second"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
+        style="@style/search_filter_recs_card"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toBottomOf="@id/first"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/search_blue"
         app:layout_constraintStart_toStartOf="@id/second"
         app:layout_constraintTop_toTopOf="@id/second"/>
@@ -324,20 +310,13 @@
 
     <RelativeLayout
         android:id="@+id/third"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
+        style="@style/search_filter_recs_card"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toBottomOf="@id/second"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@id/third"
         app:layout_constraintTop_toTopOf="@id/third"/>
@@ -374,6 +353,7 @@
         android:layout_marginBottom="6dp"
         android:background="@drawable/button_big"
         android:backgroundTint="@color/gray_dark"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/departure"
         app:layout_constraintEnd_toEndOf="@id/departure"
         app:layout_constraintStart_toStartOf="@id/departure" />
@@ -385,17 +365,24 @@
         android:fontFamily="@font/sfprodisplayregular"
         android:text="@string/show_all"
         android:textColor="@color/search_blue"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/button_show_more_direct"
         app:layout_constraintEnd_toEndOf="@id/button_show_more_direct"
         app:layout_constraintStart_toStartOf="@id/button_show_more_direct"
         app:layout_constraintTop_toTopOf="@id/button_show_more_direct" />
 
+    <View
+        android:id="@+id/button_show_more_card"
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        app:layout_constraintEnd_toEndOf="@id/button_show_more"
+        app:layout_constraintStart_toStartOf="@id/button_show_more"
+        app:layout_constraintTop_toTopOf="@id/button_show_more"/>
+
     <ImageView
         android:id="@+id/button_show_more"
         android:layout_width="328dp"
         android:layout_height="42dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="23dp"
         android:background="@drawable/button_big"
         android:backgroundTint="@color/search_blue"
@@ -416,6 +403,38 @@
         app:layout_constraintEnd_toEndOf="@id/button_show_more"
         app:layout_constraintStart_toStartOf="@id/button_show_more"
         app:layout_constraintTop_toTopOf="@id/button_show_more" />
+
+    <TextView
+        android:id="@+id/subscribe"
+        android:layout_width="0dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:paddingStart="16dp"
+        android:drawablePadding="8dp"
+        android:background="@drawable/rectangle_8"
+        android:backgroundTint="@color/gray_dark"
+        android:text="Подписка не цену"
+        android:gravity="center_vertical"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        app:drawableTint="@color/search_blue"
+        app:drawableStartCompat="@drawable/bell"
+        app:layout_constraintTop_toBottomOf="@id/button_show_more_card"
+        app:layout_constraintStart_toStartOf="@id/button_show_more_card"
+        app:layout_constraintEnd_toEndOf="@id/button_show_more_card"
+        />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/subscribe_switcher"
+        app:trackTint="@color/switch_track_selector"
+        app:thumbTint="@color/switch_thumb_selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="@id/subscribe"
+        app:layout_constraintTop_toTopOf="@id/subscribe"
+        app:layout_constraintBottom_toBottomOf="@id/subscribe"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
