@@ -65,6 +65,7 @@ class MainFragment : Fragment() {
         val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
         if (departureFromText.isNotEmpty() or binding.from.text.isNotEmpty()) {
             binding.to.setOnClickListener {
+                binding.fromBottomsheet.text = binding.from.text
                 binding.searchBottomsheet.visibility = View.VISIBLE
                 binding.mainPage.isClickable = false
                 bottomSheetBehavior.apply {

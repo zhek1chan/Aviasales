@@ -338,11 +338,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="274dp"
-                    android:fontFamily="@font/sfprodisplaysemibold"
-                    android:text="@string/hard_directions"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
+                    style="@style/bottom_sheet_buttons_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hard_directions">
@@ -382,16 +378,13 @@
 
                 <TextView
                     android:id="@+id/go_everywhere_text"
-                    android:layout_width="79dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="17dp"
                     android:layout_marginStart="102dp"
                     android:layout_marginEnd="179dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/sfprodisplaysemibold"
+                    style="@style/bottom_sheet_buttons_text"
                     android:text="@string/go_everywhere"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/go_everywhere">
@@ -433,14 +426,11 @@
                     android:id="@+id/weekends_text"
                     android:layout_width="wrap_content"
                     android:layout_height="17dp"
-                    android:layout_marginStart="194dp"
+                    android:layout_marginStart="198dp"
                     android:layout_marginEnd="99dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/sfprodisplaysemibold"
                     android:text="@string/weekends"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
+                    style="@style/bottom_sheet_buttons_text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/go_everywhere">
@@ -459,8 +449,8 @@
                     android:id="@+id/fire_sale"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginStart="277dp"
+                    android:layout_marginEnd="26.5dp"
+                    android:layout_marginStart="285.5dp"
                     android:background="@drawable/search_rounded_icons"
                     android:backgroundTint="@color/search_light_red"
                     app:layout_constraintStart_toStartOf="parent"
@@ -482,13 +472,10 @@
                     android:layout_width="65dp"
                     android:layout_height="34dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/sfprodisplaysemibold"
                     android:layout_marginEnd="18dp"
                     android:layout_marginStart="277dp"
                     android:text="@string/hot_tickets"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"
+                    style="@style/bottom_sheet_buttons_text"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/fire_sale">
@@ -511,165 +498,102 @@
 
             <View
                 android:id="@+id/stambul"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                style="@style/recs_card_city"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/some_id"
                 app:layout_constraintEnd_toEndOf="@id/popular"
                 app:layout_constraintStart_toStartOf="@id/popular"
                 app:layout_constraintTop_toTopOf="@id/popular"/>
 
             <ImageView
                 android:id="@+id/stambul_cover"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/istambul"
-                android:background="@drawable/search_rounded_icons"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_cover"
                 app:layout_constraintStart_toStartOf="@id/stambul"
                 app:layout_constraintTop_toTopOf="@id/stambul">
             </ImageView>
 
             <TextView
-                android:layout_width="66dp"
-                android:layout_height="19dp"
                 android:text="@string/istambul"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_name"
                 app:layout_constraintStart_toStartOf="@id/stambul"
                 app:layout_constraintTop_toTopOf="@id/stambul">
             </TextView>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/popular_route"
-                android:textSize="14sp"
-                android:textColor="@color/gray"
-                android:layout_marginStart="48dp"
-                android:layout_marginBottom="8dp"
+                style="@style/recs_card_popular_text"
                 app:layout_constraintStart_toStartOf="@id/stambul"
                 app:layout_constraintBottom_toBottomOf="@id/stambul">
             </TextView>
 
             <View
-                android:layout_width="296dp"
-                android:layout_height="2dp"
-                android:background="@color/gray"
+                style="@style/recs_card_city_bottom_line"
                 app:layout_constraintEnd_toEndOf="@id/stambul"
                 app:layout_constraintStart_toStartOf="@id/stambul"
                 app:layout_constraintTop_toBottomOf="@id/stambul"/>
 
             <View
                 android:id="@+id/sochi"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                style="@style/recs_card_city"
                 android:layout_marginTop="80dp"
-                android:background="@drawable/some_id"
                 app:layout_constraintEnd_toEndOf="@id/popular"
                 app:layout_constraintStart_toStartOf="@id/popular"
                 app:layout_constraintTop_toTopOf="@id/popular"/>
 
             <ImageView
                 android:id="@+id/sochi_cover"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/istambul"
-                android:background="@drawable/search_rounded_icons"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_cover"
                 app:layout_constraintStart_toStartOf="@id/sochi"
                 app:layout_constraintTop_toTopOf="@id/sochi">
             </ImageView>
 
             <TextView
-                android:layout_width="66dp"
-                android:layout_height="19dp"
                 android:text="@string/sochi"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_name"
                 app:layout_constraintStart_toStartOf="@id/sochi"
                 app:layout_constraintTop_toTopOf="@id/sochi">
             </TextView>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/popular_route"
-                android:textSize="14sp"
-                android:textColor="@color/gray"
-                android:layout_marginStart="48dp"
-                android:layout_marginBottom="8dp"
+                style="@style/recs_card_popular_text"
                 app:layout_constraintStart_toStartOf="@id/sochi"
                 app:layout_constraintBottom_toBottomOf="@id/sochi">
             </TextView>
 
             <View
-                android:layout_width="296dp"
-                android:layout_height="2dp"
-                android:background="@color/gray"
+                style="@style/recs_card_city_bottom_line"
                 app:layout_constraintEnd_toEndOf="@id/sochi"
                 app:layout_constraintStart_toStartOf="@id/sochi"
                 app:layout_constraintTop_toBottomOf="@id/sochi"/>
 
             <View
                 android:id="@+id/phuket"
-                android:layout_width="296dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
+                style="@style/recs_card_city"
                 android:layout_marginTop="144dp"
-                android:background="@drawable/some_id"
                 app:layout_constraintEnd_toEndOf="@id/popular"
                 app:layout_constraintStart_toStartOf="@id/popular"
                 app:layout_constraintTop_toTopOf="@id/popular"/>
 
             <ImageView
                 android:id="@+id/phuket_cover"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/istambul"
-                android:background="@drawable/search_rounded_icons"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_cover"
                 app:layout_constraintStart_toStartOf="@id/phuket"
                 app:layout_constraintTop_toTopOf="@id/phuket">
             </ImageView>
 
             <TextView
-                android:layout_width="66dp"
-                android:layout_height="19dp"
                 android:text="@string/phuket"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="8dp"
+                style="@style/recs_card_city_name"
                 app:layout_constraintStart_toStartOf="@id/phuket"
                 app:layout_constraintTop_toTopOf="@id/phuket">
             </TextView>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="19dp"
-                android:text="@string/popular_route"
-                android:textSize="14sp"
-                android:textColor="@color/gray"
-                android:layout_marginStart="48dp"
-                android:layout_marginBottom="8dp"
+                style="@style/recs_card_popular_text"
                 app:layout_constraintStart_toStartOf="@id/phuket"
                 app:layout_constraintBottom_toBottomOf="@id/phuket">
             </TextView>
 
             <View
-                android:layout_width="296dp"
-                android:layout_height="2dp"
-                android:background="@color/gray"
+                style="@style/recs_card_city_bottom_line"
                 app:layout_constraintEnd_toEndOf="@id/phuket"
                 app:layout_constraintStart_toStartOf="@id/phuket"
                 app:layout_constraintTop_toBottomOf="@id/phuket"/>

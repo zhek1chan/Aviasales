@@ -13,7 +13,6 @@ class RootActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityRootBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val navHostFragment =
@@ -23,13 +22,3 @@ class RootActivity : AppCompatActivity() {
         binding.bottomNavigationView.setupWithNavController(navController)
     }
 }
-
-/*navController.addOnDestinationChangedListener { _, destination, _ ->
-    if () {
-
-        bottomNavigationView.visibility = View.GONE
-    } else {
-
-        bottomNavigationView.visibility = View.VISIBLE
-    }
-}*/

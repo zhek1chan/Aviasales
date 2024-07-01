@@ -239,20 +239,12 @@
 
     <RelativeLayout
         android:id="@+id/first"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
-        android:layout_marginTop="48dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
+        style="@style/search_filter_recs_card"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toTopOf="@id/departure"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/search_light_red"
         app:layout_constraintStart_toStartOf="@id/first"
         app:layout_constraintTop_toTopOf="@id/first"/>
@@ -282,20 +274,13 @@
 
     <RelativeLayout
         android:id="@+id/second"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
+        style="@style/search_filter_recs_card"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toBottomOf="@id/first"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/search_blue"
         app:layout_constraintStart_toStartOf="@id/second"
         app:layout_constraintTop_toTopOf="@id/second"/>
@@ -325,20 +310,13 @@
 
     <RelativeLayout
         android:id="@+id/third"
-        android:layout_width="296dp"
-        android:layout_height="56dp"
-        android:background="@drawable/some_id"
+        style="@style/search_filter_recs_card"
         android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/gray_dark"
         app:layout_constraintStart_toStartOf="@id/departure"
         app:layout_constraintTop_toBottomOf="@id/second"/>
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/red_ball"
+        style="@style/search_filter_recs_card_ball"
         android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@id/third"
         app:layout_constraintTop_toTopOf="@id/third"/>
@@ -448,7 +426,8 @@
         />
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/subscribe_switcher"
-        style="@style/switcher"
+        app:trackTint="@color/switch_track_selector"
+        app:thumbTint="@color/switch_thumb_selector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"

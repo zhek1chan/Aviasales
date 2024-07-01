@@ -5,6 +5,22 @@
         <item name="itemIconTint">@color/bottom_navigation_colors</item>
     </style>
 
+    <style name="search_filter_recs_card">
+        <item name="android:layout_width">296dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:background">@drawable/some_id</item>
+        <item name="android:layout_marginTop">48dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:backgroundTint">@color/gray_dark</item>
+    </style>
+
+    <style name="search_filter_recs_card_ball">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/red_ball</item>
+    </style>
+
     <style name="search_rec_price">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/search_blue</item>
@@ -44,7 +60,54 @@
         <item name="android:layout_marginEnd">10dp</item>
     </style>
 
-    <style name="switcher" parent="Theme.AppCompat">
-        <item name="colorAccent">@color/search_blue</item>
+    <style name="bottom_sheet_buttons_text">
+        <item name="android:fontFamily">@font/sfprodisplaysemibold</item>
+        <item name="android:text">@string/hard_directions</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="recs_card_city">
+        <item name="android:layout_width">296dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@drawable/some_id</item>
+    </style>
+
+    <style name="recs_card_popular_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">19dp</item>
+        <item name="android:text">@string/popular_route</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:layout_marginStart">48dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="recs_card_city_name">
+        <item name="android:layout_width">66dp</item>
+        <item name="android:layout_height">19dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginStart">48dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="recs_card_city_cover">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:src">@drawable/istambul</item>
+        <item name="android:background">@drawable/search_rounded_icons</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="recs_card_city_bottom_line">
+        <item name="android:layout_width">296dp</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+
+
 </resources>
