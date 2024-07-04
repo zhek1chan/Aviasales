@@ -3,6 +3,7 @@ package com.example.aviasales.data.dto
 import com.example.aviasales.domain.model.Recommendation
 import com.example.aviasales.domain.model.Ticket
 import com.example.aviasales.domain.model.TicketsRec
+
 import java.text.NumberFormat
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -13,8 +14,8 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlin.time.DurationUnit
 
 class DtoMappers {
-    fun recommendationsDTOToMainRecommendations(offers: List<OfferDTO>): List<Recommendation> {
-        return offers.map {
+    fun recommendationsDTOToMainRecommendations(dto: List<OfferDTO>): List<Recommendation> {
+        return dto.map {
             val newOffers = Recommendation(
                 id = it.id,
                 title = it.title,
@@ -26,8 +27,8 @@ class DtoMappers {
         }
     }
 
-    fun ticketsDTOToTickets(tickets: List<TicketDTO>): List<Ticket> {
-        return tickets.map {
+    fun ticketsDTOToTickets(dto: List<TicketDTO>): List<Ticket> {
+        return dto.map {
             val newTickets = Ticket(
                 id = it.id,
                 price = getPriceString(it.price.value.toInt()),
@@ -47,15 +48,15 @@ class DtoMappers {
         }
     }
 
-    fun ticketsOffersDTOToTicketsOffers(ticketOfferDTOS: List<RecTicketDto>): List<TicketsRec> {
-        return ticketOfferDTOS.map {
-            val newOffers = TicketsRec(
+    fun ticketRecDTOToTicketsRec(dto: List<RecTicketDto>): List<TicketsRec> {
+        return dto.map {
+            val newTicketRecs = TicketsRec(
                 id = it.id,
                 title = it.title,
                 price = getPriceString(it.price.value.toInt()),
                 timeRange = getTimeRangeString(it.timeRange)
             )
-            newOffers
+            newTicketRecs
         }
     }
 
@@ -101,6 +102,6 @@ class DtoMappers {
             append(NumberFormat.getInstance().format(price))
             append(" ₽")
         }
-        return result.toString()
+        return result.toString().replace(',', ' ')
     }
 }

@@ -19,7 +19,7 @@ class TicketsRecsRepositoryImpl(
         when (val response = networkClient.getTicketsRecs()) {
             is Resource.Data -> {
                 with(response) {
-                    val data = mapper.ticketsOffersDTOToTicketsOffers(this.value.ticketsOffers)
+                    val data = mapper.ticketRecDTOToTicketsRec(this.value.ticketsOffers)
                     emit(Resource.Data(data))
                 }
             }

@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -18,6 +17,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.aviasales.R
 import com.example.aviasales.databinding.FragmentMainBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
@@ -46,8 +46,18 @@ class MainFragment : Fragment() {
         binding.from.setText(departureFromText)
         recsAdapter = RecsAdapter()
         recyclerView = binding.rv
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        val divider = MaterialDividerItemDecoration(
+            recyclerView.context,
+            RecyclerView.HORIZONTAL
+        )
         recyclerView.adapter = recsAdapter
+        recyclerView.addItemDecoration(
+            divider.apply {
+                setDividerThicknessResource(requireContext(), R.dimen.padding_of_rec_rv)
+                setDividerColorResource(requireContext(), R.color.black)
+                isLastItemDecorated = false
+            }
+        )
         if (arguments?.getBoolean("expand") != null) {
             val bottomSheetBehavior = BottomSheetBehavior.from(binding.searchBottomsheet)
             bottomSheetBehavior.apply {

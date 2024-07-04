@@ -1,5 +1,7 @@
 package com.example.aviasales.data.network
 
+import com.example.aviasales.data.dto.OfferDTO
+import com.example.aviasales.data.dto.RecTicketDto
 import com.example.aviasales.data.dto.RecTicketsHolderDto
 import com.example.aviasales.data.dto.RecommendationDto
 import com.example.aviasales.data.dto.TicketsDto
@@ -7,12 +9,12 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface Api {
-    @GET("ad9a46ba-276c-4a81-88a6-c068e51cce3a")
+    @GET("https://run.mocky.io/v3/cafdf18b-30e1-46db-ad36-6054af02c7f2")
     suspend fun getRecommendations(): Response<RecommendationDto>
 
-    @GET("38b5205d-1a3d-4c2f-9d77-2f9d1ef01a4a")
+    @GET("https://run.mocky.io/v3/9063ae8b-b7ae-498e-83a2-b4d840447648")
     suspend fun getTicketsOffers(): Response<RecTicketsHolderDto>
 
-    @GET("c0464573-5a13-45c9-89f8-717436748b69")
+    @GET("https://run.mocky.io/v3/96e52b71-b11f-4922-b5d2-48ba02ed553e")
     suspend fun getTickets(): Response<TicketsDto>
 }
