@@ -5,5 +5,5 @@ import com.example.aviasales.domain.model.TicketsRec
 import kotlinx.coroutines.flow.Flow
 
 interface TicketsRecsInteractor {
-    suspend fun getTicketsOffers(): Flow<Resource<List<TicketsRec>>>
+    suspend fun getTicketsRec(): Flow<Resource<List<TicketsRec>>>
 }

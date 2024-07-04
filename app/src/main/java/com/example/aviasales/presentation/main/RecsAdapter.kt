@@ -1,5 +1,6 @@
 package com.example.aviasales.presentation.main
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,10 +9,14 @@ import com.example.aviasales.domain.model.Recommendation
 
 class RecsAdapter : RecyclerView.Adapter<RecsViewHolder>() {
 
-    private var items: List<Recommendation> = emptyList()
+    private var items: ArrayList<Recommendation> = arrayListOf()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecsViewHolder {
-        val layoutInspector = LayoutInflater.from(parent.context)
-        return RecsViewHolder(RecomendationItemBinding.inflate(layoutInspector, parent, false))
+        return RecsViewHolder(
+            RecomendationItemBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: RecsViewHolder, position: Int) {
@@ -22,8 +27,9 @@ class RecsAdapter : RecyclerView.Adapter<RecsViewHolder>() {
         return items.size
     }
 
-    fun setItems(items: List<Recommendation>) {
-        this.items = items
+    fun setItems(list: List<Recommendation>) {
+        items.addAll(list)
         notifyDataSetChanged()
+        Log.d("List", "$items")
     }
 }

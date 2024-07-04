@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingEnd="67dp"
-    tools:ignore="RtlSymmetry">
+    android:layout_height="wrap_content">
 
     <View
         android:id="@+id/card"
@@ -20,6 +17,7 @@
 
 
     <ImageView
+        android:maxLines="1"
         android:id="@+id/rec_image"
         android:layout_width="132dp"
         android:layout_height="133.16dp"
@@ -28,6 +26,7 @@
         app:layout_constraintTop_toTopOf="@id/card"/>
     
     <TextView
+        android:maxLines="1"
         android:id="@+id/rec_title"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
@@ -42,6 +41,7 @@
         app:layout_constraintTop_toTopOf="@id/card"/>
 
     <TextView
+        android:maxLines="1"
         android:id="@+id/rec_city"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
@@ -56,6 +56,7 @@
         app:layout_constraintTop_toTopOf="@id/card"/>
 
     <ImageView
+        android:maxLines="1"
         android:id="@+id/plane"
         android:layout_width="17.06dp"
         android:layout_height="17.06dp"
@@ -65,6 +66,7 @@
         app:layout_constraintBottom_toBottomOf="@id/card"/>
 
     <TextView
+        android:maxLines="1"
         android:id="@+id/rec_price"
         android:layout_width="wrap_content"
         android:layout_height="19dp"

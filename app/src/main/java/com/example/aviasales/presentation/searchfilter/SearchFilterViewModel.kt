@@ -19,7 +19,7 @@ class SearchFilterViewModel(
 
     fun getData() {
         viewModelScope.launch {
-            ticketsRecsInteractor.getTicketsOffers().collect { offers ->
+            ticketsRecsInteractor.getTicketsRec().collect { offers ->
                 when (offers) {
                     is Resource.Data -> liveData.postValue(offers.value)
                     is Resource.ConnectionError -> Unit

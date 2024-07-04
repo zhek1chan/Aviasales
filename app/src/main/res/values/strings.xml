@@ -31,11 +31,12 @@
     <string name="subscribes">Подписки</string>
     <string name="profile">Профиль</string>
     <string name="preference_file_key">KEY_FROM</string>
-    <string name="amount">%1$s ₽</string>
+    <string name="amount">от %1$s ₽</string>
     <string name="ru_alphabet">абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ\n</string>
     <string name="ru_alphabet_without_new_line">абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ</string>
     <string name="from_to">%1$s - %2$s</string>
     <string name="passenger">, 1 пассажир</string>
     <string name="route_tickets_screen">%1$s-%2$s</string>
-    <string name="without_transfer">" / Без пересадок"</string>
+    <string name="without_transfer">"Без пересадок"</string>
+    <string name="with_transfer">ч в пути</string>
 </resources>

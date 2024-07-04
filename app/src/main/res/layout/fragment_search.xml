@@ -264,13 +264,23 @@
     <TextView
         android:id="@+id/first_price"
         style="@style/search_rec_price"
-        app:layout_constraintStart_toStartOf="@id/first"
+        app:layout_constraintEnd_toStartOf="@id/arrow1"
         app:layout_constraintTop_toTopOf="@id/first_title"/>
 
     <ImageView
+        android:id="@+id/arrow1"
         style="@style/search_rec_arrow"
         app:layout_constraintEnd_toEndOf="@id/first"
         app:layout_constraintTop_toTopOf="@id/first_price"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/arrow1"
+        app:layout_constraintStart_toStartOf="@id/first"
+        app:layout_constraintTop_toBottomOf="@id/first_timings"/>
 
     <RelativeLayout
         android:id="@+id/second"
@@ -300,13 +310,23 @@
     <TextView
         android:id="@+id/second_price"
         style="@style/search_rec_price"
-        app:layout_constraintStart_toStartOf="@id/second"
+        app:layout_constraintEnd_toStartOf="@id/arrow2"
         app:layout_constraintTop_toTopOf="@id/second_title"/>
 
     <ImageView
+        android:id="@+id/arrow2"
         style="@style/search_rec_arrow"
         app:layout_constraintEnd_toEndOf="@id/second"
         app:layout_constraintTop_toTopOf="@id/second_price"/>
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/arrow2"
+        app:layout_constraintStart_toStartOf="@id/second"
+        app:layout_constraintTop_toBottomOf="@id/second_timings"/>
 
     <RelativeLayout
         android:id="@+id/third"
@@ -336,24 +356,40 @@
     <TextView
         android:id="@+id/third_price"
         style="@style/search_rec_price"
-        app:layout_constraintStart_toStartOf="@id/third"
+        app:layout_constraintEnd_toStartOf="@id/arrow3"
         app:layout_constraintTop_toTopOf="@id/third_title"/>
 
     <ImageView
+        android:id="@+id/arrow3"
         style="@style/search_rec_arrow"
         app:layout_constraintEnd_toEndOf="@id/third"
         app:layout_constraintTop_toTopOf="@id/third_price"/>
 
-    <ImageView
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        app:dividerColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="@id/arrow3"
+        app:layout_constraintStart_toStartOf="@id/third"
+        app:layout_constraintTop_toBottomOf="@id/third_timings"/>
+
+    <Button
         android:id="@+id/button_show_more_direct"
         android:layout_width="296dp"
         android:layout_height="42dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="6dp"
-        android:background="@drawable/button_big"
+        android:src="@drawable/button_big"
         android:backgroundTint="@color/gray_dark"
-        android:visibility="gone"
+        android:text="@string/show_all"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="@color/search_blue"
+        android:textAppearance="@font/sfprodisplayregular"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/departure"
         app:layout_constraintEnd_toEndOf="@id/departure"
         app:layout_constraintStart_toStartOf="@id/departure" />
