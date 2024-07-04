@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aviasales.data.network.Resource
-import com.example.aviasales.domain.interactor.TicketsRecsInteractor
-import com.example.aviasales.domain.model.TicketsRec
+import com.example.java.Resource
+import com.example.java.interactor.TicketsRecsInteractor
+import com.example.java.model.TicketsRec
 import kotlinx.coroutines.launch
 
 class SearchFilterViewModel(

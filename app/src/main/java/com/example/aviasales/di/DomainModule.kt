@@ -1,21 +1,21 @@
 package com.example.aviasales.di
 
-import com.example.aviasales.data.RecsRepositoryImpl
-import com.example.aviasales.data.SharedPrefsRepositoryImpl
-import com.example.aviasales.data.TicketsRecsRepositoryImpl
-import com.example.aviasales.data.TicketsRepositoryImpl
-import com.example.aviasales.domain.interactor.FromCityInteractor
-import com.example.aviasales.domain.interactor.FromCityInteractorImpl
-import com.example.aviasales.domain.interactor.RecsInteractor
-import com.example.aviasales.domain.interactor.RecsInteractorImpl
-import com.example.aviasales.domain.interactor.TicketsInteractor
-import com.example.aviasales.domain.interactor.TicketsInteractorImpl
-import com.example.aviasales.domain.interactor.TicketsRecsInteractor
-import com.example.aviasales.domain.interactor.TicketsRecsInteractorImpl
-import com.example.aviasales.domain.repository.RecsRepository
-import com.example.aviasales.domain.repository.SharedPrefsRepository
-import com.example.aviasales.domain.repository.TicketsRecsRepository
-import com.example.aviasales.domain.repository.TicketsRepository
+import com.example.data.RecsRepositoryImpl
+import com.example.data.SharedPrefsRepositoryImpl
+import com.example.data.TicketsRecsRepositoryImpl
+import com.example.data.TicketsRepositoryImpl
+import com.example.java.interactor.FromCityInteractor
+import com.example.java.interactor.FromCityInteractorImpl
+import com.example.java.interactor.RecsInteractor
+import com.example.java.interactor.RecsInteractorImpl
+import com.example.java.interactor.TicketsInteractor
+import com.example.java.interactor.TicketsInteractorImpl
+import com.example.java.interactor.TicketsRecsInteractor
+import com.example.java.interactor.TicketsRecsInteractorImpl
+import com.example.java.repository.RecsRepository
+import com.example.java.repository.SharedPrefsRepository
+import com.example.java.repository.TicketsRecsRepository
+import com.example.java.repository.TicketsRepository
 import org.koin.dsl.module
 
 val domainModule = module {

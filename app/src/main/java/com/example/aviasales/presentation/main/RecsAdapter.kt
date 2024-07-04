@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aviasales.databinding.RecomendationItemBinding
-import com.example.aviasales.domain.model.Recommendation
+import com.example.java.model.Recommendation
 
 class RecsAdapter : RecyclerView.Adapter<RecsViewHolder>() {
 

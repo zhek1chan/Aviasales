@@ -5,8 +5,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aviasales.R
 import com.example.aviasales.databinding.TicketItemBinding
-import com.example.aviasales.domain.model.Ticket
-import java.util.Locale
+import com.example.java.model.Ticket
 
 class TicketsViewHolder(private val binding: TicketItemBinding) :
     RecyclerView.ViewHolder(binding.root) {

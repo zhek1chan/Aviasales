@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aviasales.data.network.Resource
-import com.example.aviasales.domain.interactor.TicketsInteractor
-import com.example.aviasales.domain.model.Ticket
+import com.example.java.Resource
+import com.example.java.interactor.TicketsInteractor
+import com.example.java.model.Ticket
 import kotlinx.coroutines.launch
 
 class TicketsViewModel(private val ticksInteractor: TicketsInteractor) : ViewModel() {

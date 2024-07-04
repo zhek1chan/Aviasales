@@ -1,11 +1,11 @@
 package com.example.aviasales.di
 
 import android.content.Context
-import com.example.aviasales.data.SharedPrefsStorage
-import com.example.aviasales.data.dto.DtoMappers
-import com.example.aviasales.data.network.Api
-import com.example.aviasales.data.network.NetworkClient
-import com.example.aviasales.data.network.RetrofitNetworkClient
+import com.example.data.SharedPrefsStorage
+import com.example.data.dto.DtoMappers
+import com.example.data.network.Api
+import com.example.data.network.NetworkClient
+import com.example.data.network.RetrofitNetworkClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit

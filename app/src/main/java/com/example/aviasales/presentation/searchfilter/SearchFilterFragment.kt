@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.aviasales.R
 import com.example.aviasales.databinding.FragmentSearchBinding
-import com.example.aviasales.domain.model.TicketsRec
+import com.example.java.model.TicketsRec
 import kotlinx.datetime.Month
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat

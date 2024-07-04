@@ -7,7 +7,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.aviasales.R
 import com.example.aviasales.databinding.RecomendationItemBinding
-import com.example.aviasales.domain.model.Recommendation
+import com.example.java.model.Recommendation
 import java.util.Locale
 
 class RecsViewHolder(private val binding: RecomendationItemBinding) :

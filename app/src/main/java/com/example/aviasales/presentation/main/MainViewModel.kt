@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.aviasales.data.network.Resource
-import com.example.aviasales.domain.interactor.FromCityInteractor
-import com.example.aviasales.domain.interactor.RecsInteractor
-import com.example.aviasales.domain.model.Recommendation
+import com.example.java.Resource
+import com.example.java.interactor.FromCityInteractor
+import com.example.java.interactor.RecsInteractor
+import com.example.java.model.Recommendation
 import kotlinx.coroutines.launch
 
 class MainViewModel(
